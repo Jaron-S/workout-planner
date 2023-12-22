@@ -133,90 +133,90 @@ const Profile = () => {
     [currentPassword, newPassword, confirmNewPassword]
   );
 
-  return user ? (
-    <>
-      <Card className="m-12">
-        <CardHeader>Edit Profile</CardHeader>
-        <Divider />
-        <CardBody>
-          <h3 className="m-2 mb-5">{user.email}</h3>
-          {!isChangePasswordOpen ? (
-            <>
-              <Button
-                onClick={() => setIsChangePasswordOpen(true)}
-                startContent={<LockResetOutlined />}
-              >
-                Change Password
-              </Button>
-              <Button
-                startContent={<DeleteForeverOutlined />}
-                color="danger"
-                variant="ghost"
-                className="mt-2"
-                onClick={() => setShowDeleteAccountModal(true)}
-              >
-                Delete Account
-              </Button>
-            </>
-          ) : (
-            <div>
-              <Input
-                label="Current Password"
-                type="password"
-                className="my-2"
-                onValueChange={setCurrentPassword}
-                isInvalid={!isCurrentPasswordValid}
-                errorMessage={currentPasswordMsg}
-              ></Input>
-              <Input
-                label="New Password"
-                type="password"
-                className="my-2"
-                onValueChange={setNewPassword}
-                isInvalid={!isNewPasswordValid}
-                errorMessage={newPasswordMsg}
-              ></Input>
-              <Input
-                label="Confirm New Password"
-                type="password"
-                className="my-2"
-                onValueChange={setConfirmNewPassword}
-                isInvalid={!isConfirmNewPasswordValid}
-                errorMessage={confirmNewPasswordMsg}
-              ></Input>
-            </div>
-          )}
-        </CardBody>
-        <Divider />
-        <CardFooter className="justify-end">
-          <Button className="mx-2" onClick={cancelChanges} variant="solid">
-            Cancel
-          </Button>
-          <Button
-            onClick={saveChanges}
-            color="primary"
-            isDisabled={
-              currentPassword === "" ||
-              newPassword === "" ||
-              confirmNewPassword === ""
-            }
-          >
-            Save
-          </Button>
-        </CardFooter>
-      </Card>
-      <DeleteAccountModal
-        isOpen={showDeleteAccountModal}
-        onClose={() => setShowDeleteAccountModal(false)}
-      />
-      <ConfirmationMessage
-        message="Password changed successfully!"
-        isVisible={showConfirmation}
-        onClose={() => setShowConfirmation(false)}
-      />
-    </>
-  ) : (
-    router.push("login")
+  return (
+    user && (
+      <>
+        <Card className="m-12">
+          <CardHeader>Edit Profile</CardHeader>
+          <Divider />
+          <CardBody>
+            <h3 className="m-2 mb-5">{user.email}</h3>
+            {!isChangePasswordOpen ? (
+              <>
+                <Button
+                  onClick={() => setIsChangePasswordOpen(true)}
+                  startContent={<LockResetOutlined />}
+                >
+                  Change Password
+                </Button>
+                <Button
+                  startContent={<DeleteForeverOutlined />}
+                  color="danger"
+                  variant="ghost"
+                  className="mt-2"
+                  onClick={() => setShowDeleteAccountModal(true)}
+                >
+                  Delete Account
+                </Button>
+              </>
+            ) : (
+              <div>
+                <Input
+                  label="Current Password"
+                  type="password"
+                  className="my-2"
+                  onValueChange={setCurrentPassword}
+                  isInvalid={!isCurrentPasswordValid}
+                  errorMessage={currentPasswordMsg}
+                ></Input>
+                <Input
+                  label="New Password"
+                  type="password"
+                  className="my-2"
+                  onValueChange={setNewPassword}
+                  isInvalid={!isNewPasswordValid}
+                  errorMessage={newPasswordMsg}
+                ></Input>
+                <Input
+                  label="Confirm New Password"
+                  type="password"
+                  className="my-2"
+                  onValueChange={setConfirmNewPassword}
+                  isInvalid={!isConfirmNewPasswordValid}
+                  errorMessage={confirmNewPasswordMsg}
+                ></Input>
+              </div>
+            )}
+          </CardBody>
+          <Divider />
+          <CardFooter className="justify-end">
+            <Button className="mx-2" onClick={cancelChanges} variant="solid">
+              Cancel
+            </Button>
+            <Button
+              onClick={saveChanges}
+              color="primary"
+              isDisabled={
+                currentPassword === "" ||
+                newPassword === "" ||
+                confirmNewPassword === ""
+              }
+            >
+              Save
+            </Button>
+          </CardFooter>
+        </Card>
+        <DeleteAccountModal
+          isOpen={showDeleteAccountModal}
+          onClose={() => setShowDeleteAccountModal(false)}
+        />
+        <ConfirmationMessage
+          message="Password changed successfully!"
+          isVisible={showConfirmation}
+          onClose={() => setShowConfirmation(false)}
+        />
+      </>
+    )
   );
 };
 
