@@ -54,7 +54,7 @@ const Footer = () => {
             Powered by <span className="px-1"></span>
             <div className="flex items-center pt-1 lg:pt-0">
               <Link
-                href="https://life-nexus.netflify.app"
+                href="https://life-nexus.netlify.app"
                 target={"_blank"}
                 className="relative flex items-center text-3xl font-bold"
                 style={{
