@@ -12,6 +12,8 @@ import Image from "next/image";
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect, useState } from "react";
 import CheckoutButton from "./CheckoutButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 
 const stripePromise = loadStripe("pk_live_MZbR2uJuPEShnB1KMCVxTlfk00YMdKeDW6");
 
@@ -25,13 +27,7 @@ const DonateButton = () => {
     <Popover>
       <PopoverTrigger>
         <button className="bg-yellow-400 text-black px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-yellow-500">
-          <Image
-            alt="coffee icon"
-            src="/icons/coffee_icon.ico"
-            width={24}
-            height={24}
-            className="pb-1"
-          />
+          <FontAwesomeIcon icon={faMugHot} className="text-lg pb-1" />
           <span className="text-small sm:text-medium md:text-large">
             Buy Me a Coffee
           </span>
