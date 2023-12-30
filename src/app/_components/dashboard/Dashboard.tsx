@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 import { ExerciseList, RoutineProps } from "@/app/_types";
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import exercisesData from "../../../../public/exercises.json";
 import Summary from "./Summary";
 import Week from "./Week";
@@ -54,7 +54,7 @@ const Dashboard = () => {
     <div className="h-full w-full flex flex-col sm:grid grid-cols-8 grid-rows-12 gap-4 items-center justify-center p-4">
       <DragDropContext onDragEnd={onDragEnd}>
         {/* Title & Summary*/}
-        <div className="h-full w-full flex flex-col col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-3 xl:col-start-7 xl:col-span-2 items-center px-2">
+        <div className="h-full w-full flex flex-col col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:col-start-7">
           <div className="flex justify-between items-center w-full mb-2 pl-1">
             <h1 className="font-bold text-xl break-words">
               {routine.id
@@ -69,10 +69,10 @@ const Dashboard = () => {
             </h1>
             <RoutineSettingsButton />
           </div>
-          <Summary className="w-full" />
+          <Summary />
         </div>
         <SearchPool
-          className="row-start-2 col-start-1 col-span-8 sm:row-start-9 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:row-start-9 xl:col-start-7"
+          className="row-start-2 col-start-1 col-span-8 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:row-start-9 xl:col-start-7"
           exercises={routine.lists[0].exercises}
         />
         <Week className="row-start-3 col-start-1 col-span-8 sm:row-start-1 sm:col-span-4 sm:col-start-1 md:row-span-6 md:col-span-5 xl:col-span-6" />

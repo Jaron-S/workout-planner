@@ -14,7 +14,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ViewColumnIcon from "@mui/icons-material/ViewColumn";
 import { DeleteRoutineModal } from "../modals/delete/DeleteRoutineModal";
 import { getMyRoutines, getRoutine } from "@/app/_firebase/firestore/getData";
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { RoutineProps } from "@/app/_types";
 import { useRouter } from "next/navigation";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";

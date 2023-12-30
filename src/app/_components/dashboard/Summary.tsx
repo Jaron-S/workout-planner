@@ -1,5 +1,5 @@
 import React, { Key, useEffect, useMemo, useState } from "react";
-import { useGlobalContext } from "../../_context/GlobalContext";
+import { useGlobalContext } from "../../_providers/GlobalContext";
 import {
   Button,
   Card,
@@ -207,7 +207,7 @@ const Summary = ({ className }: { className?: string }) => {
   }, [routine]);
 
   return (
-    <div className={`${className}`}>
+    <div className={`w-full ${className}`}>
       <Card>
         <CardHeader className="flex justify-between">
           <div className="flex flex-col">

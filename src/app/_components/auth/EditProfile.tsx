@@ -13,7 +13,7 @@ import { LockResetOutlined, DeleteForeverOutlined } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { DeleteAccountModal } from "../modals/delete/DeleteAccountModal";
-import { useAuthContext } from "@/app/_context/AuthContext";
+import { useAuthContext } from "@/app/_providers/AuthContext";
 import { changeUserPassword } from "@/app/_firebase/auth/auth";
 import ConfirmationMessage from "./ConfirmationMessage";
 

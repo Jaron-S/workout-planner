@@ -1,6 +1,6 @@
 import React from "react";
 import Day from "./Day";
-import { useGlobalContext } from "../../_context/GlobalContext";
+import { useGlobalContext } from "../../_providers/GlobalContext";
 
 const Week = ({ className }: { className?: string }) => {
   const { routine } = useGlobalContext();

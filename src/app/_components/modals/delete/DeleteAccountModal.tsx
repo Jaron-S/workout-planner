@@ -1,4 +1,4 @@
-import { useAuthContext } from "@/app/_context/AuthContext";
+import { useAuthContext } from "@/app/_providers/AuthContext";
 import { getCurrentAuthProvider } from "@/app/_firebase/auth/auth";
 import { removeUser } from "@/app/_firebase/firestore/removeData";
 import {

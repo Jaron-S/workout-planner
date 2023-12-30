@@ -1,6 +1,6 @@
 import { ExerciseProps } from "@/app/_types";
 import { Draggable } from "@hello-pangea/dnd";
-import { useGlobalContext } from "../../_context/GlobalContext";
+import { useGlobalContext } from "../../_providers/GlobalContext";
 import {
   Card,
   CardBody,

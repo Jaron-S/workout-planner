@@ -1,4 +1,4 @@
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { storeRoutine } from "@/app/_firebase/firestore/addData";
 import { updateRoutine } from "@/app/_firebase/firestore/editData";
 import { getMyRoutines } from "@/app/_firebase/firestore/getData";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { useEffect, useMemo, useState } from "react";
 import {
   Dropdown,
@@ -20,7 +20,7 @@ import { EditRoutineModal } from "../modals/edit/EditRoutineModal";
 import { CreateRoutineModal } from "../modals/create/CreateRoutineModal";
 import { SaveRoutineModal } from "../modals/save/SaveRoutineModal";
 import { DeleteRoutineModal } from "../modals/delete/DeleteRoutineModal";
-import { useAuthContext } from "@/app/_context/AuthContext";
+import { useAuthContext } from "@/app/_providers/AuthContext";
 
 const checkUnsavedChanges = () => {
   // Your implementation here

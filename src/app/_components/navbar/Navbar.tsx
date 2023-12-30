@@ -15,14 +15,14 @@ import {
 } from "@nextui-org/react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import Autocomplete from "./Autocomplete";
-import { useAuthContext } from "@/app/_context/AuthContext";
+import { useAuthContext } from "@/app/_providers/AuthContext";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import Logo from "./Logo";
 import { signOut } from "@/app/_firebase/auth/auth";
 import { useRouter } from "next/navigation";
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 
 export default function Navbar() {
   const router = useRouter();

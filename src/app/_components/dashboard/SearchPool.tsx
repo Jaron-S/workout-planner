@@ -18,7 +18,7 @@ const SearchPool = ({ exercises, className }: SearchPoolProps) => {
   const dropDirection = isSmallScreen ? "vertical" : "horizontal";
 
   return (
-    <div className={`flex w-full h-full items-start px-2 ${className}`}>
+    <div className={`flex w-full h-full ${className}`}>
       <Card className="w-full">
         <CardHeader>
           <h3>Exercise Pool:</h3>

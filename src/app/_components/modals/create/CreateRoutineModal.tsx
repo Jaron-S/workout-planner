@@ -8,7 +8,7 @@ import {
   Input,
 } from "@nextui-org/react";
 import EditDaysDropdown from "../edit/EditDaysDropdown";
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { useState, useMemo, useEffect } from "react";
 import { ExerciseList, RoutineProps } from "@/app/_types";
 

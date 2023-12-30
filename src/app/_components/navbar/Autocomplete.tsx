@@ -5,7 +5,7 @@ import { Input, Button } from "@nextui-org/react";
 import { Listbox, ListboxItem } from "@nextui-org/react";
 import AddIcon from "@mui/icons-material/Add";
 
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { ExerciseProps } from "@/app/_types";
 import exerciseData from "../../../../public/exercises.json";
 import { SearchIcon } from "./SearchIcon";

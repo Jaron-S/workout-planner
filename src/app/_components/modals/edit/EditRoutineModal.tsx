@@ -9,7 +9,7 @@ import {
 } from "@nextui-org/react";
 import EditDaysDropdown from "./EditDaysDropdown";
 import { useMemo, useState } from "react";
-import { useGlobalContext } from "@/app/_context/GlobalContext";
+import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import { ExerciseProps } from "@/app/_types";
 
 interface EditRoutineProps {
