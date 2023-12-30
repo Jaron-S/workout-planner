@@ -72,10 +72,10 @@ const Dashboard = () => {
           <Summary />
         </div>
         <SearchPool
-          className="row-start-2 col-start-1 col-span-8 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:row-start-9 xl:col-start-7"
+          className="row-start-2 col-start-1 col-span-8 sm:row-start-2 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:row-start-9 xl:col-start-7"
           exercises={routine.lists[0].exercises}
         />
-        <Week className="row-start-3 col-start-1 col-span-8 sm:row-start-1 sm:col-span-4 sm:col-start-1 md:row-span-6 md:col-span-5 xl:col-span-6" />
+        <Week className="row-start-3 col-start-1 col-span-8 sm:row-start-1 sm:row-span-2 sm:col-span-4 sm:col-start-1 md:row-span-6 md:col-span-5 xl:col-span-6" />
       </DragDropContext>
     </div>
   );
