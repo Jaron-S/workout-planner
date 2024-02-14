@@ -104,6 +104,7 @@ const Autocomplete = () => {
           placeholder="Find Exercise"
           isClearable
           isRequired
+          size="sm"
           onChange={(e) => {
             handleClear();
             setInputString(e.target.value);
