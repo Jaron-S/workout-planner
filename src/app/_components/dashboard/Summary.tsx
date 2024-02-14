@@ -19,6 +19,16 @@ import {
 import { MuscleGroup } from "@/app/_types";
 import Image from "next/image";
 import { Radar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Legend,
+  ChartOptions,
+  ChartData,
+} from "chart.js";
 import "chart.js/auto";
 import InfoIcon from "@mui/icons-material/Info";
 
@@ -79,12 +89,13 @@ const MuscleMapView = (muscleActivation: MuscleGroup[]) => {
   );
 };
 
-const RadarView = (muscleActivation: MuscleGroup[]) => {
-  const primaryColor = "#006FEE"; // NextUI default primary blue
-  const primaryLightColor = "#66AAF9"; // A lighter shade of NextUI blue
-  const backgroundColor = "rgba(102, 170, 249, 0.2)"; // Light blue with transparency for the fill
+ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Legend);
 
-  // Map over muscleActivation to create the chart data
+const RadarView = (muscleActivation: MuscleGroup[]) => {
+  const primaryColor = "#006FEE";
+  const primaryLightColor = "#66AAF9";
+  const backgroundColor = "rgba(102, 170, 249, 0.4)";
+
   const labels = muscleActivation.map((group) => group.id.replace("_", " "));
   const dataValues = muscleActivation.map((group) => Math.round(group.sets));
 
@@ -99,8 +110,9 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
         borderColor: primaryColor,
         pointBackgroundColor: primaryColor,
         pointBorderColor: "#fff",
-        pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: primaryLightColor,
+        borderWidth: 1,
+        pointRadius: 4,
+        pointHoverRadius: 8,
       },
     ],
   };
@@ -110,25 +122,37 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
       r: {
         beginAtZero: true,
         grid: {
-          color: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.5)",
         },
         angleLines: {
-          color: "#FFFFFF",
+          color: "rgba(255, 255, 255, 0.5)",
+        },
+        pointLabels: {
+          color: "#FFFFFF", // Adjust the color to fit the theme
+          font: {
+            size: 14, // Adjust the size as needed
+          },
+        },
+        ticks: {
+          backdropColor: "transparent", // Removes the backdrop color
+          color: "#FFFFFF", // Adjust the color to fit the theme
         },
       },
     },
     elements: {
       line: {
         borderWidth: 3,
-        borderColor: "#FFFFFF",
       },
       point: {
-        borderColor: "#FFFFFF",
+        borderWidth: 2,
       },
     },
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        // Customize tooltip here if needed
       },
     },
   };
