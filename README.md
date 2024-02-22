@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Workout Planner | NextJS Web App
+
+## Table of Contents
+
+1. [About the Project](#about-the-project)
+2. [Live Demo](#live-demo)
+3. [Folder Structure](#folder-structure)
+4. [Technologies](#technologies)
+5. [Getting Started](#getting-started)
+
+## About the Project
+
+Workout Planner is a web application designed to help users create, manage, and track their workout routines efficiently. Built with NextJS and TypeScript, it leverages Firebase for backend services including authentication, database, and hosting. The UI is crafted using NextUI, providing a modern and responsive user experience.
+
+## Live Demo
+
+Experience the app in action [here](https://workout-balancer.netlify.app/).
+
+## Folder Structure
+
+- `_components/`: Reusable UI components.
+- `_firebase/`: Firebase configurations and utilities.
+- `_providers/`: Context providers for state management.
+- `_types/`: TypeScript type definitions and interfaces.
+- `pages/`: Routes and pages of the application, following Next.js conventions.
+
+## Technologies
+
+This project is built using a range of technologies and libraries, specifically chosen for their efficiency and scalability:
+
+### Frontend
+
+- **NextJS**: A React framework for building server-rendered apps, ensuring fast load times and SEO friendliness.
+- **TypeScript**: Provides strong typing to enhance code quality and maintainability.
+- **NextUI**: A modern UI library for React, used to design a user-friendly interface.
+- **SWR**: For data fetching, caching, and state management, optimized for React and NextJS.
+
+### Backend
+
+- **Firebase**:
+  - Firestore: A NoSQL database for storing and syncing data in real-time.
+  - Authentication: Manages user sign-up, sign-in, and security.
+
+## Prerequisites
+
+Before you begin, ensure you have a [Firebase account](https://firebase.google.com/). You'll need it to set up the backend services for this project.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Clone the repository:
+`git clone https://github.com/Jaron-S/workout-planner.git`
+3. Install NPM packages:
+`npm install`
+5. Set up your Firebase project and configure the environment variables in a `.env.local` file as follows:
 ```
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+```
+6. Run the development server:
+`npm run dev`
+7. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For detailed instructions on configuration and deployment, refer to the official NextJS and Firebase documentation.
