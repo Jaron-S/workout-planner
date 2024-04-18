@@ -13,6 +13,7 @@ import {
   Input,
 } from "@nextui-org/react";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import ProviderButtons from "./ProviderButtons";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ const Register = () => {
       <Divider />
 
       <CardBody>
+      <ProviderButtons />
         <form onSubmit={handleForm}>
           <div className="mb-4">
             <Input
