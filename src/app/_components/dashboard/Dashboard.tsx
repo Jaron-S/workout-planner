@@ -51,31 +51,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col sm:grid grid-cols-8 grid-rows-2 gap-4 items-center justify-center p-4">
+    <div className="flex flex-col sm:grid grid-cols-8 grid-rows-2 gap-4 items-center p-4">
       <DragDropContext onDragEnd={onDragEnd}>
-        {/* Title & Summary*/}
-        <div className="flex flex-col items-center col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4">
-          <div className="flex justify-between items-center mb-2 pl-1">
-            <h1 className="font-bold text-xl break-words">
-              {routine.id
-                ? routine.id
-                    .split("_")
-                    .map(
-                      (word: string) =>
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                    )
-                    .join(" ")
-                : "New Routine"}
-            </h1>
-            <RoutineSettingsButton />
-          </div>
-          <Summary className="flex justify-center" />
-        </div>
+        <Summary className="col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4" />
         <SearchPool
-          className="row-start-2 col-start-1 col-span-8 sm:col-start-5"
+          className="row-start-2 col-start-1 col-span-8 sm:col-start-5 sm:col-span-4 xl:col-start-1 xl:col-span-8"
           exercises={routine.lists[0].exercises}
         />
-        <Week className="row-start-3 col-start-1 row-span-1 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 sm:row-span-2" />
+        <Week className="row-start-3 col-start-1 row-span-1 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 sm:row-span-2 xl:row-span-1" />
       </DragDropContext>
     </div>
   );

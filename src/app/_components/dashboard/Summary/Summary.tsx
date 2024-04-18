@@ -35,6 +35,7 @@ import {
 } from "chart.js";
 import "chart.js/auto";
 import InfoIcon from "@mui/icons-material/Info";
+import RoutineSettingsButton from "../RoutineSettingsButton";
 
 function initialMuscleGroups(): MuscleGroup[] {
   return [
@@ -245,15 +246,12 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
       legend: {
         display: false,
       },
-      tooltip: {
-        // Customize tooltip here if needed
-      },
     },
   };
 
   return (
-    <div className="min-h-[250px] flex items-center justify-center overflow-visible">
-      <Radar data={data} options={options} />
+    <div className="flex items-center justify-center overflow-visible">
+      <Radar data={data} options={options} className="" />
     </div>
   );
 };
@@ -266,7 +264,7 @@ const Summary = ({ className }: { className?: string }) => {
   const [planesOfMotionCounts, setPlanesOfMotionCounts] =
     useState<PlanesOfMotion>(initialPlanesOfMotion());
   const [selectedKeys, setSelectedKeys] = React.useState(
-    new Set(["Distribution"])
+    new Set(["Muscle Group Distribution"])
   );
 
   const selectedValue = React.useMemo(
@@ -322,66 +320,89 @@ const Summary = ({ className }: { className?: string }) => {
   }, [routine]);
 
   return (
-    <div className={`w-full ${className}`}>
-      <Card>
-        <CardHeader className="flex justify-between">
-          <div className="flex flex-col">
-            <p className="text-md">Muscle Activation</p>
-            <p className="text-small text-default-500">(sets per week)</p>
-          </div>
-          <Tooltip
-            content={
-              <div className="px-1 py-2 max-w-[200px]">
-                <div className="text-small font-bold">Need help?</div>
+    <div
+      className={` h-full flex flex-col items-center justify-start ${className}`}
+    >
+      {/* Title */}
+      <div className="w-full flex justify-between items-center mb-2 pl-4">
+        <h1 className="font-bold text-xl break-words">
+          {routine.id
+            ? routine.id
+                .split("_")
+                .map(
+                  (word: string) => word.charAt(0).toUpperCase() + word.slice(1)
+                )
+                .join(" ")
+            : "New Routine"}
+        </h1>
+        <RoutineSettingsButton />
+      </div>
+      {/* Summary */}
+      <div className="w-full flex justify-center">
+        <Card className="w-full">
+          <CardHeader className="flex justify-between">
+            <div className="flex flex-col">
+              <p className="text-md">Exercise Activation</p>
+              <p className="text-small text-default-500">(sets per week)</p>
+            </div>
+            <Tooltip
+              content={
+                <div className="px-1 py-2 max-w-[200px]">
+                  <div className="text-small font-bold">Need help?</div>
 
-                <div className="text-tiny">
-                  Click here to learn more about routine design.
+                  <div className="text-tiny">
+                    Click here to learn more about routine design.
+                  </div>
                 </div>
-              </div>
-            }
-          >
-            <Link href="/guide" color="foreground">
-              <InfoIcon />
-            </Link>
-          </Tooltip>
-        </CardHeader>
-        <Divider />
-        <CardBody className="flex items-center overflow-hidden">
-          {selectedValue === "Muscle Groups" ? (
-            ListView(muscleActivation)
-          ) : selectedValue === "Planes of Motion" ? (
-            PlanesOfMotionView(planesOfMotionCounts)
-          ) : selectedValue === "Distribution" ? (
-            RadarView(muscleActivation)
-          ) : (
-            <></>
-          )}
-        </CardBody>
-        <Divider />
-        <CardFooter className="flex justify-center items-center my-2">
-          <Dropdown>
-            <DropdownTrigger>
-              <Button variant="bordered" className="capitalize">
-                {selectedValue}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Summary View Selector"
-              variant="flat"
-              disallowEmptySelection
-              selectionMode="single"
-              selectedKeys={selectedKeys}
-              onSelectionChange={handleSelectionChange}
+              }
             >
-              <DropdownItem key="Distribution">Distribution</DropdownItem>
-              <DropdownItem key="Muscle Groups">Muscle Groups</DropdownItem>
-              <DropdownItem key="Planes of Motion">
-                Planes of Motion
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </CardFooter>
-      </Card>
+              <Link href="/guide" color="foreground">
+                <InfoIcon />
+              </Link>
+            </Tooltip>
+          </CardHeader>
+          <Divider />
+          <CardBody className="flex items-center overflow-hidden">
+            {selectedValue === "Muscle Group List" ? (
+              ListView(muscleActivation)
+            ) : selectedValue === "Planes of Motion" ? (
+              PlanesOfMotionView(planesOfMotionCounts)
+            ) : selectedValue === "Muscle Group Distribution" ? (
+              RadarView(muscleActivation)
+            ) : (
+              <></>
+            )}
+          </CardBody>
+          <Divider />
+          <CardFooter className="flex justify-center items-center my-2">
+            <Dropdown>
+              <DropdownTrigger>
+                <Button variant="bordered" className="capitalize">
+                  {selectedValue}
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                aria-label="Summary View Selector"
+                variant="flat"
+                disallowEmptySelection
+                selectionMode="single"
+                selectedKeys={selectedKeys}
+                onSelectionChange={handleSelectionChange}
+              >
+                <DropdownItem key="Muscle Group Distribution">
+                  Muscle Group Distribution
+                </DropdownItem>
+                <DropdownItem key="Muscle Group List">
+                  Muscle Group List
+                </DropdownItem>
+                <DropdownItem key="Planes of Motion">
+                  Planes of Motion
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
   );
 };

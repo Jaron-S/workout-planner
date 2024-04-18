@@ -25,7 +25,7 @@ const Day = ({ day, exercises }: DayProps) => {
   };
 
   return (
-    <Card className="w-full md:max-w-[225px]">
+    <Card className="w-full min-h-full md:max-w-[225px]">
       <CardHeader className="flex justify-between gap-3">
         {day}
         <Warning sets={checkSetNumber()} />
