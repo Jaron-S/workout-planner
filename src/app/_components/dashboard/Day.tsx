@@ -38,7 +38,7 @@ const Day = ({ day, exercises }: DayProps) => {
             {...provided.droppableProps}
             className="h-full w-full"
           >
-            <CardBody className="h-full w-full items-center overflow-hidden overflow-y-scroll">
+            <CardBody className="h-full w-full items-center overflow-hidden">
               {exercises.map((exercise, index) => {
                 return (
                   <Exercise
