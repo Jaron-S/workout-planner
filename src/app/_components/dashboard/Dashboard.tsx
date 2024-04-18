@@ -58,7 +58,7 @@ const Dashboard = () => {
           className="row-start-2 col-start-1 col-span-8 sm:col-start-5 sm:col-span-4 xl:col-start-1 xl:col-span-8"
           exercises={routine.lists[0].exercises}
         />
-        <Week className="row-start-3 col-start-1 row-span-1 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 sm:row-span-2 xl:row-span-1" />
+        <Week className="row-start-3 col-start-1 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 sm:row-span-2 xl:row-span-1" />
       </DragDropContext>
     </div>
   );
