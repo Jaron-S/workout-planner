@@ -5,7 +5,7 @@ import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 import { ExerciseList, RoutineProps } from "@/app/_types";
 import { useGlobalContext } from "@/app/_providers/GlobalContext";
 import exercisesData from "../../../../public/exercises.json";
-import Summary from "./Summary";
+import Summary from "./Summary/Summary";
 import Week from "./Week";
 import SearchPool from "./SearchPool";
 import RoutineSettingsButton from "./RoutineSettingsButton";
@@ -51,11 +51,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col sm:grid grid-cols-8 grid-rows-12 gap-4 items-center justify-center p-4">
+    <div className="flex flex-col sm:grid grid-cols-8 grid-rows-2 gap-4 items-center justify-center p-4">
       <DragDropContext onDragEnd={onDragEnd}>
         {/* Title & Summary*/}
-        <div className="h-full w-full flex flex-col col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:col-start-7">
-          <div className="flex justify-between items-center w-full mb-2 pl-1">
+        <div className="flex flex-col items-center col-start-1 row-start-1 col-span-8 sm:col-start-5 sm:col-span-4">
+          <div className="flex justify-between items-center mb-2 pl-1">
             <h1 className="font-bold text-xl break-words">
               {routine.id
                 ? routine.id
@@ -69,13 +69,13 @@ const Dashboard = () => {
             </h1>
             <RoutineSettingsButton />
           </div>
-          <Summary />
+          <Summary className="flex justify-center" />
         </div>
         <SearchPool
-          className="row-start-2 col-start-1 col-span-8 sm:row-start-2 sm:col-start-5 sm:col-span-4 md:col-start-6 md:col-span-4 xl:row-start-9 xl:col-start-7"
+          className="row-start-2 col-start-1 col-span-8 sm:col-start-5"
           exercises={routine.lists[0].exercises}
         />
-        <Week className="row-start-3 col-start-1 row-span-2 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 md:col-span-5 xl:col-span-6" />
+        <Week className="row-start-3 col-start-1 row-span-1 col-span-8 sm:row-start-1 sm:col-start-1 sm:col-span-4 sm:row-span-2" />
       </DragDropContext>
     </div>
   );

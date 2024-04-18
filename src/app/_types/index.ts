@@ -2,14 +2,13 @@ export type ExerciseProps = {
   id: string;
   name: string;
   sets: number;
-  primary_muscle: keyof MuscleGroups;
-  primary_weighting: number;
-  aux_muscle_1?: keyof MuscleGroups;
-  aux_muscle_2?: keyof MuscleGroups;
-  aux_muscle_3?: keyof MuscleGroups;
-  aux_weighting_1?: number;
-  aux_weighting_2?: number;
-  aux_weighting_3?: number;
+  muscle_weightings: MuscleGroupWeighting[];
+  plane_of_motion: keyof PlanesOfMotion;
+};
+
+type MuscleGroupWeighting = {
+  muscle: keyof MuscleGroups;
+  weighting: number;
 };
 
 export interface RoutineProps {
@@ -45,4 +44,13 @@ export interface MuscleGroup {
   id: keyof MuscleGroups;
   sets: number;
   reps: number;
+}
+
+export interface PlanesOfMotion {
+  SagittalPush: number;
+  SagittalPull: number;
+  FrontalPush: number;
+  FrontalPull: number;
+  TransversePush: number;
+  TransversePull: number;
 }

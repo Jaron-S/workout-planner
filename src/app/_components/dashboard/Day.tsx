@@ -8,9 +8,8 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 import Exercise from "./Exercise";
-import { ExerciseProps, MuscleGroup } from "@/app/_types";
-import WarningIcon from "@mui/icons-material/Warning";
-import WarningAmberIcon from "@mui/icons-material/WarningAmber";
+import { ExerciseProps } from "@/app/_types";
+import { WarningAmber as WarningAmberIcon } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 
 interface DayProps {
@@ -39,7 +38,7 @@ const Day = ({ day, exercises }: DayProps) => {
             {...provided.droppableProps}
             className="h-full w-full"
           >
-            <CardBody className="h-full w-full items-center overflow-hidden">
+            <CardBody className="h-full w-full items-center overflow-hidden overflow-y-scroll">
               {exercises.map((exercise, index) => {
                 return (
                   <Exercise

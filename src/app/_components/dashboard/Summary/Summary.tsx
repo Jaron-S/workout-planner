@@ -1,5 +1,7 @@
+"use client";
+
 import React, { Key, useEffect, useMemo, useState } from "react";
-import { useGlobalContext } from "../../_providers/GlobalContext";
+import { useGlobalContext } from "../../../_providers/GlobalContext";
 import {
   Button,
   Card,
@@ -16,9 +18,13 @@ import {
   ListboxItem,
   Tooltip,
 } from "@nextui-org/react";
-import { MuscleGroup } from "@/app/_types";
-import Image from "next/image";
-import { Radar } from "react-chartjs-2";
+import {
+  ExerciseProps,
+  MuscleGroup,
+  MuscleGroups,
+  PlanesOfMotion,
+} from "@/app/_types";
+import { Radar, PolarArea } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -26,13 +32,11 @@ import {
   LineElement,
   Filler,
   Legend,
-  ChartOptions,
-  ChartData,
 } from "chart.js";
 import "chart.js/auto";
 import InfoIcon from "@mui/icons-material/Info";
 
-function emptyMuscleGroups(): MuscleGroup[] {
+function initialMuscleGroups(): MuscleGroup[] {
   return [
     { id: "Neck", sets: 0, reps: 0 },
     { id: "Traps", sets: 0, reps: 0 },
@@ -50,6 +54,17 @@ function emptyMuscleGroups(): MuscleGroup[] {
     { id: "Hamstrings", sets: 0, reps: 0 },
     { id: "Calves", sets: 0, reps: 0 },
   ];
+}
+
+function initialPlanesOfMotion(): PlanesOfMotion {
+  return {
+    SagittalPush: 0,
+    SagittalPull: 0,
+    FrontalPush: 0,
+    FrontalPull: 0,
+    TransversePush: 0,
+    TransversePull: 0,
+  };
 }
 
 const ListView = (muscleActivation: MuscleGroup[]) => {
@@ -76,16 +91,95 @@ const ListView = (muscleActivation: MuscleGroup[]) => {
   );
 };
 
-const MuscleMapView = (muscleActivation: MuscleGroup[]) => {
+const PlanesOfMotionView = (planesOfMotion: PlanesOfMotion) => {
+  const primaryColor = "#006FEE"; // You can still use this for borders or other purposes
+
+  // Define an array of background colors, one for each category
+  const backgroundColors = [
+    "rgba(255, 99, 132, 0.6)", // Red
+    "rgba(54, 162, 235, 0.6)", // Blue
+    "rgba(255, 206, 86, 0.6)", // Yellow
+    "rgba(75, 192, 192, 0.6)", // Green
+    "rgba(153, 102, 255, 0.6)", // Purple
+    "rgba(255, 159, 64, 0.6)", // Orange
+  ];
+
+  const data = {
+    labels: [
+      "Sagittal Push",
+      "Sagittal Pull",
+      "Frontal Push",
+      "Frontal Pull",
+      "Transverse Push",
+      "Transverse Pull",
+    ],
+    datasets: [
+      {
+        label: "# of Sets",
+        data: [
+          planesOfMotion.SagittalPush,
+          planesOfMotion.SagittalPull,
+          planesOfMotion.FrontalPush,
+          planesOfMotion.FrontalPull,
+          planesOfMotion.TransversePush,
+          planesOfMotion.TransversePull,
+        ],
+        fill: true,
+        backgroundColor: backgroundColors, // Apply the array of colors here
+        borderWidth: 1,
+        pointBackgroundColor: primaryColor,
+        pointBorderColor: "#fff",
+        pointRadius: 4,
+        pointHoverRadius: 8,
+      },
+    ],
+  };
+
+  const options = {
+    scales: {
+      r: {
+        beginAtZero: true,
+        grid: {
+          color: "rgba(255, 255, 255, 0.5)",
+        },
+        angleLines: {
+          color: "rgba(255, 255, 255, 0.5)",
+        },
+        pointLabels: {
+          color: "#ecedee",
+          font: {
+            size: 14,
+          },
+        },
+        ticks: {
+          backdropColor: "transparent",
+          color: "#ecedee",
+        },
+      },
+    },
+    elements: {
+      line: {
+        borderWidth: 3,
+      },
+      point: {
+        borderWidth: 2,
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom" as "top" | "bottom" | "left" | "right",
+        labels: {
+          color: "#ecedee",
+        },
+      },
+    },
+  };
+
   return (
-    <Image
-      src="/MuscleMap.png"
-      alt="Muscle Map"
-      width={250}
-      height={300}
-      layout="responsive"
-      className="max-w-[250px]"
-    />
+    <div className="w-full md:min-h-[250px] max-h-full flex items-center justify-center overflow-visible">
+      <PolarArea data={data} options={options} />
+    </div>
   );
 };
 
@@ -128,14 +222,14 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
           color: "rgba(255, 255, 255, 0.5)",
         },
         pointLabels: {
-          color: "#FFFFFF", // Adjust the color to fit the theme
+          color: "#ecedee",
           font: {
-            size: 14, // Adjust the size as needed
+            size: 14,
           },
         },
         ticks: {
-          backdropColor: "transparent", // Removes the backdrop color
-          color: "#FFFFFF", // Adjust the color to fit the theme
+          backdropColor: "transparent",
+          color: "#ecedee",
         },
       },
     },
@@ -158,7 +252,7 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
   };
 
   return (
-    <div className="w-full h-full md:min-h-[250px] flex items-center justify-center overflow-visible">
+    <div className="min-h-[250px] flex items-center justify-center overflow-visible">
       <Radar data={data} options={options} />
     </div>
   );
@@ -166,9 +260,13 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
 
 const Summary = ({ className }: { className?: string }) => {
   const { routine } = useGlobalContext();
-  const [muscleActivation, setMuscleActivation] = useState(emptyMuscleGroups());
+  const [muscleActivation, setMuscleActivation] = useState<MuscleGroup[]>(
+    initialMuscleGroups()
+  );
+  const [planesOfMotionCounts, setPlanesOfMotionCounts] =
+    useState<PlanesOfMotion>(initialPlanesOfMotion());
   const [selectedKeys, setSelectedKeys] = React.useState(
-    new Set(["Radar View"])
+    new Set(["Distribution"])
   );
 
   const selectedValue = React.useMemo(
@@ -182,51 +280,44 @@ const Summary = ({ className }: { className?: string }) => {
 
   // adds up all the muscle activation
   const sumMuscleActivation = () => {
-    let newMuscleActivation = emptyMuscleGroups();
+    const activationSum = initialMuscleGroups();
 
-    // Loop through each exercise in the routine
     routine.lists.forEach((list) => {
       if (list.id === "Search") return;
-      list.exercises.forEach((exercise) => {
-        // Update the primary muscle group activation
-        const muscleObj = newMuscleActivation.find(
-          (muscle) =>
-            muscle.id.toLowerCase() === exercise.primary_muscle?.toLowerCase()
-        );
-        if (muscleObj) {
-          muscleObj.sets += exercise.primary_weighting * exercise.sets;
-        }
 
-        // Loop through auxiliary muscles to update their activation
-        for (let i = 1; i <= 10; i++) {
-          const auxMuscle =
-            exercise[`aux_muscle_${i}` as keyof typeof exercise];
-          const auxWeighting =
-            exercise[`aux_weighting_${i}` as keyof typeof exercise];
-
-          if (
-            typeof auxMuscle !== "string" ||
-            typeof auxWeighting !== "number"
-          ) {
-            break;
-          }
-
-          const auxMuscleObj = newMuscleActivation.find(
-            (muscle) => muscle.id === auxMuscle
+      list.exercises.forEach((exercise: ExerciseProps) => {
+        exercise.muscle_weightings.forEach((weighting) => {
+          const foundIndex = activationSum.findIndex(
+            (mg) => mg.id === weighting.muscle
           );
-          if (auxMuscleObj) {
-            auxMuscleObj.sets += auxWeighting * exercise.sets;
+          if (foundIndex !== -1) {
+            activationSum[foundIndex].sets += weighting.weighting;
           }
-        }
+        });
       });
     });
 
-    // Update the state to reflect the new muscle activations
-    setMuscleActivation(newMuscleActivation);
+    setMuscleActivation(activationSum);
+  };
+
+  // adds up planes of motion
+  const sumPlanesOfMotion = () => {
+    const counts = initialPlanesOfMotion();
+
+    routine.lists.forEach((list) => {
+      if (list.id === "Search") return; // skipping lists with id "Search"
+
+      list.exercises.forEach((exercise: ExerciseProps) => {
+        const sets = (counts[exercise.plane_of_motion] += exercise.sets);
+      });
+    });
+
+    setPlanesOfMotionCounts(counts);
   };
 
   useEffect(() => {
     sumMuscleActivation();
+    sumPlanesOfMotion();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [routine]);
 
@@ -256,11 +347,11 @@ const Summary = ({ className }: { className?: string }) => {
         </CardHeader>
         <Divider />
         <CardBody className="flex items-center overflow-hidden">
-          {selectedValue === "List View" ? (
+          {selectedValue === "Muscle Groups" ? (
             ListView(muscleActivation)
-          ) : selectedValue === "Muscle Map" ? (
-            MuscleMapView(muscleActivation)
-          ) : selectedValue === "Radar View" ? (
+          ) : selectedValue === "Planes of Motion" ? (
+            PlanesOfMotionView(planesOfMotionCounts)
+          ) : selectedValue === "Distribution" ? (
             RadarView(muscleActivation)
           ) : (
             <></>
@@ -281,11 +372,12 @@ const Summary = ({ className }: { className?: string }) => {
               selectionMode="single"
               selectedKeys={selectedKeys}
               onSelectionChange={handleSelectionChange}
-              disabledKeys={["Muscle Map"]}
             >
-              <DropdownItem key="Radar View">Radar View</DropdownItem>
-              <DropdownItem key="List View">List View</DropdownItem>
-              <DropdownItem key="Muscle Map">Muscle Map</DropdownItem>
+              <DropdownItem key="Distribution">Distribution</DropdownItem>
+              <DropdownItem key="Muscle Groups">Muscle Groups</DropdownItem>
+              <DropdownItem key="Planes of Motion">
+                Planes of Motion
+              </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </CardFooter>

@@ -1,927 +1,1041 @@
 [
   {
+    "id": "ex1",
     "name": "Bench Press",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Triceps",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 1 },
+      { "muscle": "Triceps", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex2",
     "name": "Close-Grip Bench Press",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.4 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex3",
     "name": "Incline Bench Press",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.3
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.4 },
+      { "muscle": "Triceps", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex4",
     "name": "Decline Bench Press",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Triceps",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 1 },
+      { "muscle": "Triceps", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex5",
     "name": "Dumbbell Bench Press",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Triceps",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 1 },
+      { "muscle": "Triceps", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex6",
     "name": "Pull-Ups",
-    "primary_muscle": "Lats",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Biceps",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Middle_Back",
-    "aux_weighting_2": 0.2,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Lats", "weighting": 1 },
+      { "muscle": "Biceps", "weighting": 0.3 },
+      { "muscle": "Middle_Back", "weighting": 0.2 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex7",
     "name": "Chin-Ups",
-    "primary_muscle": "Lats",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Biceps",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Middle_Back",
-    "aux_weighting_2": 0.2,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Lats", "weighting": 1 },
+      { "muscle": "Biceps", "weighting": 0.4 },
+      { "muscle": "Middle_Back", "weighting": 0.2 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex8",
     "name": "Lat Pulldown",
-    "primary_muscle": "Lats",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Biceps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Middle_Back",
-    "aux_weighting_2": 0.1,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Lats", "weighting": 1 },
+      { "muscle": "Biceps", "weighting": 0.2 },
+      { "muscle": "Middle_Back", "weighting": 0.1 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex9",
     "name": "T-Bar Rows",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lats",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Biceps",
-    "aux_weighting_2": 0.2,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Lats", "weighting": 0.4 },
+      { "muscle": "Biceps", "weighting": 0.2 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex10",
     "name": "Bent-over Rows",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lats",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Biceps",
-    "aux_weighting_2": 0.2,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Lats", "weighting": 0.3 },
+      { "muscle": "Biceps", "weighting": 0.2 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex11",
     "name": "Pendlay Rows",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lats",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Biceps",
-    "aux_weighting_2": 0.2,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.1
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Lats", "weighting": 0.3 },
+      { "muscle": "Biceps", "weighting": 0.2 },
+      { "muscle": "Traps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex12",
     "name": "Shoulder Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Triceps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex13",
     "name": "Military Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Triceps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex14",
     "name": "Arnold Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Triceps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex15",
     "name": "Dumbbell Shoulder Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Triceps", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex16",
     "name": "Lateral Raises",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Shoulders", "weighting": 1 }],
+    "plane_of_motion": "FrontalPush"
   },
   {
+    "id": "ex17",
     "name": "Front Raises",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Shoulders", "weighting": 1 }],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex18",
     "name": "Face Pulls",
-    "primary_muscle": "Rear Delts",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Middle_Back",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Rear Delts", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Middle_Back", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex19",
     "name": "Rear Delt Flyes",
-    "primary_muscle": "Rear Delts",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Middle_Back",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Rear Delts", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.2 },
+      { "muscle": "Middle_Back", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "FrontalPull"
   },
   {
+    "id": "ex20",
     "name": "Tricep Dips",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex21",
     "name": "Tricep Pushdown",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex22",
     "name": "Skull Crushers",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex23",
     "name": "Close-Grip Push-Ups",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.4 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex24",
     "name": "Overhead Tricep Extension",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex25",
     "name": "Bicep Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex26",
     "name": "Hammer Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.3
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex27",
     "name": "Preacher Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex28",
     "name": "Concentration Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Biceps", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex29",
     "name": "EZ Bar Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex30",
     "name": "Zottman Curls",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.4
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex31",
     "name": "Push-Ups",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Triceps",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 1 },
+      { "muscle": "Triceps", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex32",
     "name": "Diamond Push-Ups",
-    "primary_muscle": "Triceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Triceps", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.3 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex33",
     "name": "Pec Deck Flyes",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Chest", "weighting": 1 }],
+    "plane_of_motion": "FrontalPush"
   },
   {
+    "id": "ex34",
     "name": "Dumbbell Flyes",
-    "primary_muscle": "Chest",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Chest", "weighting": 1 }],
+    "plane_of_motion": "FrontalPush"
   },
   {
+    "id": "ex35",
     "name": "Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.8,
-    "aux_muscle_2": "Adductors",
-    "aux_weighting_2": 0.6,
-    "aux_muscle_3": "Hamstrings",
-    "aux_weighting_3": 0.5,
-    "aux_muscle_4": "Lower Back",
-    "aux_weighting_4": 0.4,
-    "aux_muscle_5": "Calves",
-    "aux_weighting_5": 0.3
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.8 },
+      { "muscle": "Adductors", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.5 },
+      { "muscle": "Lower Back", "weighting": 0.4 },
+      { "muscle": "Calves", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex36",
     "name": "Front Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4,
-    "aux_muscle_3": "Abs",
-    "aux_weighting_3": 0.3
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.4 },
+      { "muscle": "Abs", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex37",
     "name": "Hack Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Calves",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Calves", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex38",
     "name": "Overhead Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.4,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.3,
-    "aux_muscle_3": "Abs",
-    "aux_weighting_3": 0.2
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.4 },
+      { "muscle": "Glutes", "weighting": 0.3 },
+      { "muscle": "Abs", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex39",
     "name": "Goblet Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Abs",
-    "aux_weighting_2": 0.3
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Abs", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex40",
     "name": "Box Squats",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4,
-    "aux_muscle_3": "Lower_Back",
-    "aux_weighting_3": 0.2
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.5 },
+      { "muscle": "Hamstrings", "weighting": 0.4 },
+      { "muscle": "Lower Back", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex41",
     "name": "Pistol Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Calves",
-    "aux_weighting_2": 0.3
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Calves", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex42",
     "name": "Deadlifts",
-    "primary_muscle": "Lower Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.8,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.7,
-    "aux_muscle_3": "Upper Back",
-    "aux_weighting_3": 0.6,
-    "aux_muscle_4": "Quads",
-    "aux_weighting_4": 0.5
+    "muscle_weightings": [
+      { "muscle": "Lower Back", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.8 },
+      { "muscle": "Hamstrings", "weighting": 0.7 },
+      { "muscle": "Upper Back", "weighting": 0.6 },
+      { "muscle": "Quads", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex43",
     "name": "Sumo Deadlifts",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lower_Back",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4,
-    "aux_muscle_3": "Quads",
-    "aux_weighting_3": 0.2
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Lower Back", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.4 },
+      { "muscle": "Quads", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex44",
     "name": "Romanian Deadlifts",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.9,
-    "aux_muscle_2": "Lower Back",
-    "aux_weighting_2": 0.7
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.9 },
+      { "muscle": "Lower Back", "weighting": 0.7 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex45",
     "name": "Stiff-Legged Deadlifts",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lower_Back",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.3
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Lower Back", "weighting": 0.5 },
+      { "muscle": "Glutes", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex46",
     "name": "Trap Bar Deadlifts",
-    "primary_muscle": "Lower_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.4,
-    "aux_muscle_3": "Hamstrings",
-    "aux_weighting_3": 0.3
+    "muscle_weightings": [
+      { "muscle": "Lower Back", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.7 },
+      { "muscle": "Quads", "weighting": 0.4 },
+      { "muscle": "Hamstrings", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex47",
     "name": "Lunges",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex48",
     "name": "Reverse Lunges",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.7 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex49",
     "name": "Side Lunges",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.5 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "FrontalPush"
   },
   {
+    "id": "ex50",
     "name": "Curtsy Lunges",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "FrontalPush"
   },
   {
+    "id": "ex51",
     "name": "Walking Lunges",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.7 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex52",
     "name": "Bulgarian Split Squats",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.9,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.7,
-    "aux_muscle_4": "Calves",
-    "aux_weighting_4": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.9 },
+      { "muscle": "Hamstrings", "weighting": 0.7 },
+      { "muscle": "Calves", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex53",
     "name": "Step-Ups",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex54",
     "name": "Leg Press",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Hamstrings",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.5 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex55",
     "name": "Calf Raises",
-    "primary_muscle": "Calves",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Calves", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.2 },
+      { "muscle": "Glutes", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex56",
     "name": "Seated Calf Raises",
-    "primary_muscle": "Calves",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Calves", "weighting": 1 }],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex57",
     "name": "Donkey Calf Raises",
-    "primary_muscle": "Calves",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.2,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.1
+    "muscle_weightings": [
+      { "muscle": "Calves", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.2 },
+      { "muscle": "Glutes", "weighting": 0.1 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex58",
     "name": "Leg Extensions",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Quads", "weighting": 1 }],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex59",
     "name": "Leg Curls",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Calves",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Calves", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex60",
     "name": "Glute-Ham Raises",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Lower_Back",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.7 },
+      { "muscle": "Lower_Back", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex61",
     "name": "Hip Thrusts",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Hamstrings",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.3
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Hamstrings", "weighting": 0.5 },
+      { "muscle": "Quads", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex62",
     "name": "Glute Bridges",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Hamstrings",
-    "aux_weighting_1": 0.4
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Hamstrings", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex63",
     "name": "Good Mornings",
-    "primary_muscle": "Lower_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Hamstrings",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Lower_Back", "weighting": 1 },
+      { "muscle": "Hamstrings", "weighting": 0.7 },
+      { "muscle": "Glutes", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex64",
     "name": "Planks",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.3
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex65",
     "name": "Side Planks",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.2
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex66",
     "name": "Extended Planks",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.4
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex67",
     "name": "Russian Twists",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Lower_Back",
-    "aux_weighting_1": 0.3
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Lower_Back", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex68",
     "name": "Bicycle Crunches",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex69",
     "name": "Reverse Crunches",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex70",
     "name": "Mountain Climbers",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.3 },
+      { "muscle": "Quads", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex71",
     "name": "Flutter Kicks",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex72",
     "name": "Hanging Leg Raises",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.4
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex73",
     "name": "Windshield Wipers",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Obliques",
-    "aux_weighting_1": 0.6
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Obliques", "weighting": 0.6 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex74",
     "name": "Ab Rollouts",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.3,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.2
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.3 },
+      { "muscle": "Triceps", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex75",
     "name": "Toe Touches",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex76",
     "name": "Sit-Ups",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex77",
     "name": "V-Ups",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex78",
     "name": "Superman",
-    "primary_muscle": "Lower_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.6
+    "muscle_weightings": [
+      { "muscle": "Lower_Back", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.6 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex79",
     "name": "Oblique Crunches",
-    "primary_muscle": "Obliques",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Obliques", "weighting": 1 }],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex80",
     "name": "Hollow Hold",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Abs", "weighting": 1 }],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex81",
     "name": "Cable Woodchoppers",
-    "primary_muscle": "Obliques",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Abs",
-    "aux_weighting_1": 0.4
+    "muscle_weightings": [
+      { "muscle": "Obliques", "weighting": 1 },
+      { "muscle": "Abs", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex82",
     "name": "Clean and Jerk",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.6,
-    "aux_muscle_3": "Glutes",
-    "aux_weighting_3": 0.5,
-    "aux_muscle_4": "Hamstrings",
-    "aux_weighting_4": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.7 },
+      { "muscle": "Quads", "weighting": 0.6 },
+      { "muscle": "Glutes", "weighting": 0.5 },
+      { "muscle": "Hamstrings", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex83",
     "name": "Power Clean",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.6 },
+      { "muscle": "Quads", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex84",
     "name": "Snatch",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Traps",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Traps", "weighting": 0.6 },
+      { "muscle": "Quads", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex85",
     "name": "Thrusters",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Triceps",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.6 },
+      { "muscle": "Triceps", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex86",
     "name": "Burpees",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.5,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.5 },
+      { "muscle": "Shoulders", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex87",
     "name": "Kettlebell Swings",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Lower_Back",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.7 },
+      { "muscle": "Lower_Back", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex88",
     "name": "Turkish Get-Ups",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Abs",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Abs", "weighting": 0.6 },
+      { "muscle": "Glutes", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex89",
     "name": "Medicine Ball Slams",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Abs",
-    "aux_weighting_1": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Abs", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex90",
     "name": "Wall Balls",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.6
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.6 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex91",
     "name": "Deadlift to Overhead Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Hamstrings",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.7,
-    "aux_muscle_3": "Triceps",
-    "aux_weighting_3": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Hamstrings", "weighting": 0.7 },
+      { "muscle": "Quads", "weighting": 0.7 },
+      { "muscle": "Triceps", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex92",
     "name": "Renegade Rows",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Abs",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.6 },
+      { "muscle": "Abs", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex93",
     "name": "Farmer's Walk",
-    "primary_muscle": "Traps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.7
+    "muscle_weightings": [
+      { "muscle": "Traps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.7 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex94",
     "name": "Man Makers",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Chest",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Quads",
-    "aux_weighting_2": 0.6,
-    "aux_muscle_3": "Abs",
-    "aux_weighting_3": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Chest", "weighting": 0.7 },
+      { "muscle": "Quads", "weighting": 0.6 },
+      { "muscle": "Abs", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex95",
     "name": "Bear Crawls",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Abs",
-    "aux_weighting_2": 0.6
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.7 },
+      { "muscle": "Abs", "weighting": 0.6 }
+    ],
+    "plane_of_motion": "TransversePush"
   },
   {
+    "id": "ex96",
     "name": "Sled Push",
-    "primary_muscle": "Quads",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Glutes",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Calves",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 },
+      { "muscle": "Glutes", "weighting": 0.7 },
+      { "muscle": "Calves", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex97",
     "name": "Sled Pull",
-    "primary_muscle": "Hamstrings",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Middle_Back",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Glutes",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 },
+      { "muscle": "Middle_Back", "weighting": 0.6 },
+      { "muscle": "Glutes", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex98",
     "name": "Rowing Machine",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Quads",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Biceps",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Quads", "weighting": 0.7 },
+      { "muscle": "Biceps", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex99",
     "name": "Battle Ropes",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Abs",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.7 },
+      { "muscle": "Abs", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex100",
     "name": "Barbell Kayaking Rotations",
-    "primary_muscle": "Abs",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Obliques",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Shoulders",
-    "aux_weighting_2": 0.5,
-    "aux_muscle_3": "Upper_Back",
-    "aux_weighting_3": 0.5,
-    "aux_muscle_4": "Forearms",
-    "aux_weighting_4": 0.4
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Obliques", "weighting": 0.7 },
+      { "muscle": "Shoulders", "weighting": 0.5 },
+      { "muscle": "Upper_Back", "weighting": 0.5 },
+      { "muscle": "Forearms", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex101",
     "name": "Reverse Barbell Curl",
-    "primary_muscle": "Biceps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Forearms",
-    "aux_weighting_1": 0.6
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.6 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex102",
     "name": "Chest Supported Reverse Fly",
-    "primary_muscle": "Middle_Back",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Rear Delts",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Traps",
-    "aux_weighting_2": 0.5
+    "muscle_weightings": [
+      { "muscle": "Middle_Back", "weighting": 1 },
+      { "muscle": "Rear Delts", "weighting": 0.7 },
+      { "muscle": "Traps", "weighting": 0.5 }
+    ],
+    "plane_of_motion": "TransversePull"
   },
   {
+    "id": "ex103",
     "name": "Neck Curls",
-    "primary_muscle": "Neck",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Neck", "weighting": 1 }],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex104",
     "name": "Neck Extensions",
-    "primary_muscle": "Neck",
-    "primary_weighting": 1
+    "muscle_weightings": [{ "muscle": "Neck", "weighting": 1 }],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex105",
     "name": "Dumbbell Rows",
-    "primary_muscle": "Lats",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Middle_Back",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Biceps",
-    "aux_weighting_2": 0.5,
-    "aux_muscle_3": "Traps",
-    "aux_weighting_3": 0.4
+    "muscle_weightings": [
+      { "muscle": "Lats", "weighting": 1 },
+      { "muscle": "Middle_Back", "weighting": 0.7 },
+      { "muscle": "Biceps", "weighting": 0.5 },
+      { "muscle": "Traps", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex106",
     "name": "Seated Overhead Barbell Press",
-    "primary_muscle": "Shoulders",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Triceps",
-    "aux_weighting_1": 0.6,
-    "aux_muscle_2": "Traps",
-    "aux_weighting_2": 0.4
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 },
+      { "muscle": "Triceps", "weighting": 0.6 },
+      { "muscle": "Traps", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
   {
+    "id": "ex107",
     "name": "Barbell Shrugs",
-    "primary_muscle": "Traps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Upper_Back",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Neck",
-    "aux_weighting_2": 0.5,
-    "aux_muscle_3": "Shoulders",
-    "aux_weighting_3": 0.4
+    "muscle_weightings": [
+      { "muscle": "Traps", "weighting": 1 },
+      { "muscle": "Upper_Back", "weighting": 0.7 },
+      { "muscle": "Neck", "weighting": 0.5 },
+      { "muscle": "Shoulders", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex108",
     "name": "Dumbbell Shrugs",
-    "primary_muscle": "Traps",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Shoulders",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Neck",
-    "aux_weighting_2": 0.5,
-    "aux_muscle_3": "Upper_Back",
-    "aux_weighting_3": 0.4
+    "muscle_weightings": [
+      { "muscle": "Traps", "weighting": 1 },
+      { "muscle": "Shoulders", "weighting": 0.7 },
+      { "muscle": "Neck", "weighting": 0.5 },
+      { "muscle": "Upper_Back", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
   },
   {
+    "id": "ex109",
     "name": "Barbell Hip Thrusts",
-    "primary_muscle": "Glutes",
-    "primary_weighting": 1,
-    "aux_muscle_1": "Hamstrings",
-    "aux_weighting_1": 0.7,
-    "aux_muscle_2": "Lower_Back",
-    "aux_weighting_2": 0.5,
-    "aux_muscle_3": "Quadriceps",
-    "aux_weighting_3": 0.4
+    "muscle_weightings": [
+      { "muscle": "Glutes", "weighting": 1 },
+      { "muscle": "Hamstrings", "weighting": 0.7 },
+      { "muscle": "Lower_Back", "weighting": 0.5 },
+      { "muscle": "Quadriceps", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush"
   },
-  { "name": "Cycling", "primary_muscle": "Hamstrings", "primary_weighting": 0 },
-  { "name": "Running", "primary_muscle": "Hamstrings", "primary_weighting": 0 }
+  {
+    "id": "ex110",
+    "name": "Cycling",
+    "muscle_weightings": [{ "muscle": "Hamstrings", "weighting": 0 }],
+    "plane_of_motion": "SagittalPush"
+  },
+  {
+    "id": "ex111",
+    "name": "Running",
+    "muscle_weightings": [{ "muscle": "Hamstrings", "weighting": 0 }],
+    "plane_of_motion": "SagittalPush"
+  }
 ]
