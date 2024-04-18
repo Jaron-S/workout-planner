@@ -11,7 +11,6 @@ import {
   signInWithPopup,
   signOut as firebaseSignOut,
   updatePassword,
-  signInWithRedirect,
 } from "firebase/auth";
 
 const auth = getAuth(app);
@@ -55,7 +54,7 @@ export async function signOut() {
 // Auth Providers
 const googleProvider = new GoogleAuthProvider();
 export const signInWithGoogle = async () => {
-  return signInWithRedirect(auth, googleProvider);
+  return signInWithPopup(auth, googleProvider);
 };
 
 export const getCurrentAuthProvider = () => {
