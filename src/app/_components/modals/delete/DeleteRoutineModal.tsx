@@ -1,6 +1,6 @@
 import { useAuthContext } from "@/app/_providers/AuthContext";
 import { useGlobalContext } from "@/app/_providers/GlobalContext";
-import { initialRoutine } from "@/app/_providers/initialData";
+import { initialRoutine } from "@/app/_data/initialData";
 import { removeRoutine } from "@/app/_firebase/firestore/removeData";
 import {
   Button,

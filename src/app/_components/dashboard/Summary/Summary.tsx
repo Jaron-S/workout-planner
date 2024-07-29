@@ -192,7 +192,7 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
 
   const labels = muscleActivation.map((group) => group.id.replace("_", " "));
   const dataValues = muscleActivation.map((group) => {
-    return group.sets;
+    return Math.round(group.sets);
   });
 
   const data = {
