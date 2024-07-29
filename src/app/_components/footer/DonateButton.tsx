@@ -15,8 +15,6 @@ import CheckoutButton from "./CheckoutButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 
-const stripePromise = loadStripe("pk_live_MZbR2uJuPEShnB1KMCVxTlfk00YMdKeDW6");
-
 const DonateButton = () => {
   const [amount, setAmount] = useState<string>("5");
   const [isValid, setIsValid] = useState<boolean>(true);

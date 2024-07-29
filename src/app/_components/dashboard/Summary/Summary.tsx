@@ -281,17 +281,19 @@ const Summary = ({ className }: { className?: string }) => {
     const activationSum = initialMuscleGroups();
 
     routine.lists.forEach((list) => {
+      console.log(routine);
       if (list.id === "Search") return;
 
       list.exercises.forEach((exercise: ExerciseProps) => {
-        exercise.muscle_weightings.forEach((weighting) => {
-          const foundIndex = activationSum.findIndex(
-            (mg) => mg.id === weighting.muscle
-          );
-          if (foundIndex !== -1) {
-            activationSum[foundIndex].sets += weighting.weighting;
-          }
-        });
+        exercise.muscle_weightings &&
+          exercise.muscle_weightings.forEach((weighting) => {
+            const foundIndex = activationSum.findIndex(
+              (mg) => mg.id === weighting.muscle
+            );
+            if (foundIndex !== -1) {
+              activationSum[foundIndex].sets += weighting.weighting;
+            }
+          });
       });
     });
 
