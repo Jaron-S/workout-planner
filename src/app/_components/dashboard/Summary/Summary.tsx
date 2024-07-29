@@ -191,9 +191,7 @@ const RadarView = (muscleActivation: MuscleGroup[]) => {
   const backgroundColor = "rgba(102, 170, 249, 0.4)";
 
   const labels = muscleActivation.map((group) => group.id.replace("_", " "));
-  const dataValues = muscleActivation.map((group) => {
-    return Math.round(group.sets);
-  });
+  const dataValues = muscleActivation.map((group) => Math.round(group.sets));
 
   const data = {
     labels: labels,
