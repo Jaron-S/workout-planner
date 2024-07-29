@@ -188,11 +188,12 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Legend);
 
 const RadarView = (muscleActivation: MuscleGroup[]) => {
   const primaryColor = "#006FEE";
-  const primaryLightColor = "#66AAF9";
   const backgroundColor = "rgba(102, 170, 249, 0.4)";
 
   const labels = muscleActivation.map((group) => group.id.replace("_", " "));
-  const dataValues = muscleActivation.map((group) => Math.round(group.sets));
+  const dataValues = muscleActivation.map((group) => {
+    return group.sets;
+  });
 
   const data = {
     labels: labels,
@@ -281,7 +282,6 @@ const Summary = ({ className }: { className?: string }) => {
     const activationSum = initialMuscleGroups();
 
     routine.lists.forEach((list) => {
-      console.log(routine);
       if (list.id === "Search") return;
 
       list.exercises.forEach((exercise: ExerciseProps) => {
@@ -291,7 +291,8 @@ const Summary = ({ className }: { className?: string }) => {
               (mg) => mg.id === weighting.muscle
             );
             if (foundIndex !== -1) {
-              activationSum[foundIndex].sets += weighting.weighting;
+              activationSum[foundIndex].sets +=
+                weighting.weighting * exercise.sets;
             }
           });
       });
