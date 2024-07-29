@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { RoutineProps } from "../_types";
-import { initialRoutine } from "./initialData";
+import { initialRoutine } from "../_data/initialData";
 import { Dispatch, SetStateAction } from "react";
 
 interface ContextProps {
