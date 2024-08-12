@@ -39,7 +39,7 @@ const Autocomplete = () => {
       return;
     } else if (selectedItem) {
       const id = crypto.randomUUID() as unknown as string;
-      const newItem = { ...selectedItem, sets: 4, id };
+      const newItem = { ...selectedItem, sets: 3, id };
       const newRoutine = { ...routine };
       newRoutine.lists[0].exercises = [
         ...newRoutine.lists[0].exercises,
