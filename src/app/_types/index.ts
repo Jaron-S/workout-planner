@@ -4,6 +4,7 @@ export type ExerciseProps = {
   sets: number;
   muscle_weightings: MuscleGroupWeighting[];
   plane_of_motion: keyof PlanesOfMotion;
+  compound?: boolean;
 };
 
 type MuscleGroupWeighting = {
