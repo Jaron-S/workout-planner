@@ -47,161 +47,127 @@ const Day = ({ day, exercises }: DayProps) => {
 };
 
 const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
-  // Calculate total sets
-  const totalSets = exercises.reduce((acc, exercise) => acc + exercise.sets, 0);
+  const warningSelector = (exercises: ExerciseProps[]) => {
+    let warnings: string[] = [];
+    let highestPriorityColor: string = "success";
 
-  // Count compound exercises
-  const compoundExercises = exercises.filter((exercise) => exercise.compound);
-  const compoundExerciseCount = compoundExercises.length;
+    // Calculate total sets
+    const totalSets = exercises.reduce(
+      (acc, exercise) => acc + exercise.sets,
+      0
+    );
 
-  // Count isolation exercises
-  const isolationExercises = exercises.filter((exercise) => !exercise.compound);
-  const isolationExerciseCount = isolationExercises.length;
+    // Count compound exercises
+    const compoundExercises = exercises.filter((exercise) => exercise.compound);
+    const compoundExerciseCount = compoundExercises.length;
 
-  // Check if compound exercises are performed first
-  const compoundFirst = exercises.every((exercise, index) => {
-    if (exercise.compound) {
-      // Once we find a compound exercise, ensure that no isolation exercises are before it
-      return !exercises.slice(0, index).some((e) => !e.compound);
-    }
-    return true;
-  });
+    // Count isolation exercises
+    const isolationExercises = exercises.filter(
+      (exercise) => !exercise.compound
+    );
+    const isolationExerciseCount = isolationExercises.length;
 
-  // Calculate the total number of exercises per muscle group
-  const muscleGroups = exercises.reduce((acc, exercise) => {
-    exercise.muscle_weightings.forEach(({ muscle }) => {
-      acc[muscle] = (acc[muscle] || 0) + 1;
+    // Check if compound exercises are performed first
+    const compoundFirst = exercises.every((exercise, index) => {
+      if (exercise.compound) {
+        // Once we find a compound exercise, ensure that no isolation exercises are before it
+        return !exercises.slice(0, index).some((e) => !e.compound);
+      }
+      return true;
     });
-    return acc;
-  }, {} as Record<string, number>);
 
-  // Warning selector function
-  const warningSelector = (
-    totalSets: number,
-    compoundExerciseCount: number,
-    isolationExerciseCount: number,
-    compoundFirst: boolean,
-    muscleGroups: Record<string, number>
-  ) => {
-    let warningMsg;
-    let warningColor;
+    // Calculate the total number of exercises per muscle group
+    const muscleGroups = exercises.reduce((acc, exercise) => {
+      exercise.muscle_weightings.forEach(({ muscle }) => {
+        acc[muscle] = (acc[muscle] || 0) + 1;
+      });
+      return acc;
+    }, {} as Record<string, number>);
 
     if (!compoundFirst) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">
-            Compound exercises should be first.
-          </div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider rearranging your workout to start with compound exercises
-            for optimal performance.
-          </div>
-        </div>
+      warnings.push(
+        "Compound exercises should be first. Consider rearranging your workout."
       );
-      warningColor = "danger";
-    } else if (totalSets < 15) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">Less than 15 sets.</div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider increasing weekly volume or reducing the number of days.
-          </div>
-        </div>
-      );
-      warningColor = "danger";
-    } else if (totalSets > 25) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">Over 25 sets.</div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider reducing weekly volume or increasing the number of days.
-          </div>
-        </div>
-      );
-      warningColor = "danger";
-    } else if (compoundExerciseCount > 3) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">
-            Too many compound exercises.
-          </div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider reducing the number of compound exercises to avoid
-            excessive fatigue.
-          </div>
-        </div>
-      );
-      warningColor = "warning";
-    } else if (isolationExerciseCount > 4) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">
-            Too many isolation exercises.
-          </div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider reducing the number of isolation exercises to focus on more
-            impactful movements.
-          </div>
-        </div>
-      );
-      warningColor = "warning";
-    } else if (Object.values(muscleGroups).some((count) => count > 3)) {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">
-            Too many exercises per muscle group.
-          </div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Consider reducing the number of exercises targeting the same muscle
-            group.
-          </div>
-        </div>
-      );
-      warningColor = "warning";
-    } else {
-      warningMsg = (
-        <div className="px-1 py-2 max-w-[200px]">
-          <div className="text-small font-bold">All criteria met.</div>
-          <Divider className="my-1" />
-          <div className="text-tiny">
-            Your workout is well-structured and within the optimal range for
-            progress and fatigue management.
-          </div>
-        </div>
-      );
-      warningColor = "success";
+      highestPriorityColor = "danger";
     }
 
-    return { warningMsg, warningColor };
+    if (totalSets < 15) {
+      warnings.push(
+        "Less than 15 sets. Consider increasing weekly volume or reducing the number of days."
+      );
+      highestPriorityColor = "danger";
+    } else if (totalSets > 25) {
+      warnings.push(
+        "Over 25 sets. Consider reducing weekly volume or increasing the number of days."
+      );
+      highestPriorityColor = "danger";
+    }
+
+    if (compoundExerciseCount > 3) {
+      warnings.push(
+        "Too many compound exercises. Consider reducing the number to avoid excessive fatigue."
+      );
+      highestPriorityColor =
+        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
+    }
+
+    if (isolationExerciseCount > 4) {
+      warnings.push(
+        "Too many isolation exercises. Consider reducing the number to focus on more impactful movements."
+      );
+      highestPriorityColor =
+        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
+    }
+
+    if (Object.values(muscleGroups).some((count) => count > 3)) {
+      warnings.push(
+        "Too many exercises for one muscle group. Consider reducing the number to avoid overtraining."
+      );
+      highestPriorityColor =
+        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
+    }
+
+    if (warnings.length === 0) {
+      warnings.push("All criteria met. Your workout is well-structured.");
+    }
+
+    return { warnings, highestPriorityColor };
   };
 
-  const { warningMsg, warningColor } = warningSelector(
-    totalSets,
-    compoundExerciseCount,
-    isolationExerciseCount,
-    compoundFirst,
-    muscleGroups
-  );
+  const { warnings, highestPriorityColor } = warningSelector(exercises);
 
   return (
     <div className="flex justify-end items-center">
-      <Tooltip showArrow content={warningMsg} delay={500}>
-        {warningColor !== "success" ? (
+      <Tooltip
+        showArrow
+        content={
+          <div className="px-1 py-2 max-w-[200px]">
+            {warnings.map((warning, index) => (
+              <React.Fragment key={index}>
+                <div className="text-small font-bold">{warning}</div>
+                {index < warnings.length - 1 && <Divider className="my-2" />}
+              </React.Fragment>
+            ))}
+          </div>
+        }
+        delay={500}
+      >
+        {highestPriorityColor !== "success" ? (
           <WarningAmberIcon
-            className={`text-${warningColor}`}
+            className={`text-${highestPriorityColor}`}
             fontSize="small"
           />
         ) : (
-          <CheckIcon className={`text-${warningColor}`} fontSize="small" />
+          <CheckIcon
+            className={`text-${highestPriorityColor}`}
+            fontSize="small"
+          />
         )}
       </Tooltip>
-      <p className="ml-2">{`Sets: ${totalSets}`}</p>
+      <p className="ml-2">{`Sets: ${exercises.reduce(
+        (acc, exercise) => acc + exercise.sets,
+        0
+      )}`}</p>
     </div>
   );
 };
