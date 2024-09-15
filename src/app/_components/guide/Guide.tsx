@@ -1,6 +1,7 @@
 "use client";
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import BodyFatCalculator from "../calculators/BodyFatCalculator";
 
 const content = {
   strength: (
@@ -197,7 +198,7 @@ const Guide = () => {
         guarantee 100% accuracy for every individual.
       </span>
 
-      <Accordion className="py-4">
+      <Accordion className="py-4 mb-4">
         <AccordionItem
           key="1"
           aria-label="Strength & Hypertrophy Training"
@@ -239,6 +240,12 @@ const Guide = () => {
           {content.beginner}
         </AccordionItem>
       </Accordion>
+
+      <h2 className="text-3xl font-bold">Body Fat Calculator</h2>
+      <span className="text-tiny text-default-500 mb-8">
+        Not sure if you want to bulk or cut? Try out body fat calculator.
+      </span>
+      <BodyFatCalculator />
     </div>
   );
 };
