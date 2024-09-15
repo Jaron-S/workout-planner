@@ -86,8 +86,7 @@
       { "muscle": "Middle_Back", "weighting": 0.1 },
       { "muscle": "Traps", "weighting": 0.1 }
     ],
-    "plane_of_motion": "SagittalPull",
-    "compound": true
+    "plane_of_motion": "SagittalPull"
   },
   {
     "id": "ex9",
@@ -153,8 +152,7 @@
       { "muscle": "Traps", "weighting": 0.2 },
       { "muscle": "Triceps", "weighting": 0.1 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex15",
@@ -206,8 +204,7 @@
       { "muscle": "Chest", "weighting": 0.3 },
       { "muscle": "Shoulders", "weighting": 0.1 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex21",
@@ -235,8 +232,7 @@
       { "muscle": "Chest", "weighting": 0.4 },
       { "muscle": "Shoulders", "weighting": 0.2 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex24",
@@ -306,8 +302,7 @@
       { "muscle": "Triceps", "weighting": 0.3 },
       { "muscle": "Shoulders", "weighting": 0.2 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex32",
@@ -317,8 +312,7 @@
       { "muscle": "Chest", "weighting": 0.3 },
       { "muscle": "Shoulders", "weighting": 0.2 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex33",
@@ -389,8 +383,7 @@
       { "muscle": "Glutes", "weighting": 0.6 },
       { "muscle": "Abs", "weighting": 0.3 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex40",
@@ -401,8 +394,7 @@
       { "muscle": "Hamstrings", "weighting": 0.4 },
       { "muscle": "Lower Back", "weighting": 0.2 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex41",
@@ -412,8 +404,7 @@
       { "muscle": "Glutes", "weighting": 0.6 },
       { "muscle": "Calves", "weighting": 0.3 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex42",
@@ -533,8 +524,7 @@
       { "muscle": "Hamstrings", "weighting": 0.7 },
       { "muscle": "Calves", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex53",
@@ -544,8 +534,7 @@
       { "muscle": "Glutes", "weighting": 0.6 },
       { "muscle": "Hamstrings", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex54",
@@ -555,8 +544,7 @@
       { "muscle": "Glutes", "weighting": 0.5 },
       { "muscle": "Hamstrings", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex55",
@@ -617,8 +605,7 @@
       { "muscle": "Hamstrings", "weighting": 0.5 },
       { "muscle": "Quads", "weighting": 0.3 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex62",
@@ -627,8 +614,7 @@
       { "muscle": "Glutes", "weighting": 1 },
       { "muscle": "Hamstrings", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex63",
@@ -638,8 +624,7 @@
       { "muscle": "Hamstrings", "weighting": 0.7 },
       { "muscle": "Glutes", "weighting": 0.5 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex64",
@@ -675,8 +660,7 @@
       { "muscle": "Abs", "weighting": 1 },
       { "muscle": "Lower_Back", "weighting": 0.3 }
     ],
-    "plane_of_motion": "TransversePush",
-    "compound": true
+    "plane_of_motion": "TransversePush"
   },
   {
     "id": "ex68",
@@ -713,8 +697,7 @@
       { "muscle": "Abs", "weighting": 1 },
       { "muscle": "Forearms", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPull",
-    "compound": true
+    "plane_of_motion": "SagittalPull"
   },
   {
     "id": "ex73",
@@ -733,8 +716,7 @@
       { "muscle": "Shoulders", "weighting": 0.3 },
       { "muscle": "Triceps", "weighting": 0.2 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex75",
@@ -910,8 +892,7 @@
       { "muscle": "Traps", "weighting": 1 },
       { "muscle": "Forearms", "weighting": 0.7 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex94",
@@ -1026,8 +1007,7 @@
       { "muscle": "Biceps", "weighting": 0.5 },
       { "muscle": "Traps", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPull",
-    "compound": true
+    "plane_of_motion": "SagittalPull"
   },
   {
     "id": "ex106",
@@ -1037,8 +1017,7 @@
       { "muscle": "Triceps", "weighting": 0.6 },
       { "muscle": "Traps", "weighting": 0.4 }
     ],
-    "plane_of_motion": "SagittalPush",
-    "compound": true
+    "plane_of_motion": "SagittalPush"
   },
   {
     "id": "ex107",
