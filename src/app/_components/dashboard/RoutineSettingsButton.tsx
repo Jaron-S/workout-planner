@@ -8,6 +8,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
+  useDisclosure,
 } from "@nextui-org/react";
 
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -30,13 +31,13 @@ const checkUnsavedChanges = () => {
 const RoutineSettingsButton = () => {
   const { user } = useAuthContext();
   const { routine } = useGlobalContext();
+
   const [showNewRoutineModal, setShowNewRoutineModal] = useState(false);
   const [showEditRoutineModal, setShowEditRoutineModal] = useState(false);
   const [showSaveRoutineModal, setShowSaveRoutineModal] = useState(false);
   const [showDeleteRoutineModal, setShowDeleteRoutineModal] = useState(false);
 
-  const iconClasses =
-    "text-xl text-default-700 pointer-events-none flex-shrink-0";
+  const iconClasses = "text-xl text-default-700 pointer-events-none flex-shrink-0";
 
   const openNewRoutineModal = () => {
     if (checkUnsavedChanges()) {
@@ -89,6 +90,8 @@ const RoutineSettingsButton = () => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
+
+      {/* Keeping the modal content as per your requirement */}
       <CreateRoutineModal
         isOpen={showNewRoutineModal}
         onClose={() => setShowNewRoutineModal(false)}
