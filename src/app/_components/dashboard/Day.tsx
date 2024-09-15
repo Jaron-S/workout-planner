@@ -55,7 +55,7 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
 
   const warningSelector = (exercises: ExerciseProps[]) => {
     let warnings: string[] = [];
-    let highestPriorityColor: "success" | "warning" | "danger" | "primary" = "success";
+    let highestPriorityColor: string = "success";
   
     // Calculate total sets
     const totalSets = exercises.reduce(
@@ -75,10 +75,10 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
       return true;
     });
   
-    // Calculate total number of exercises per muscle group
-    const muscleGroups = exercises.reduce((acc, exercise) => {
-      exercise.muscle_weightings.forEach(({ muscle }) => {
-        acc[muscle] = (acc[muscle] || 0) + 1;
+    // Calculate total number of sets per muscle group
+    const muscleGroupSets = exercises.reduce((acc, exercise) => {
+      exercise.muscle_weightings.forEach(({ muscle, weighting }) => {
+        acc[muscle] = (acc[muscle] || 0) + exercise.sets * weighting;
       });
       return acc;
     }, {} as Record<string, number>);
@@ -115,17 +115,20 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
       highestPriorityColor = "warning";
     }
   
-    // Overloaded muscle groups (Primary - Recommendation tier)
-    const overloadedMuscleGroups = Object.entries(muscleGroups)
-      .filter(([_, count]) => count > 3)
-      .map(([muscle]) => muscle);
-    
-    if (overloadedMuscleGroups.length > 0) {
-      warnings.push(
-        `Too many exercises for muscle group(s): ${overloadedMuscleGroups.join(", ")}. Reduce exercise count for these muscle groups.`
-      );
-      if (highestPriorityColor === "success") highestPriorityColor = "primary"; // Least critical
-    }
+    // Check for muscle groups that are overloaded or undertrained
+    Object.entries(muscleGroupSets).forEach(([muscle, sets]) => {
+      if (sets < 3) {
+        warnings.push(
+          `Too few sets for ${muscle} (${sets} sets). Consider adding more sets to adequately train this muscle.`
+        );
+        if (highestPriorityColor === "success") highestPriorityColor = "warning";
+      } else if (sets > 10) {
+        warnings.push(
+          `Too many sets for ${muscle} (${sets} sets). Consider reducing volume to avoid overtraining.`
+        );
+        if (highestPriorityColor === "success") highestPriorityColor = "warning";
+      }
+    });
   
     // No warnings
     if (warnings.length === 0) {
@@ -134,6 +137,7 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
   
     return { warnings, highestPriorityColor };
   };
+  
     
   const { warnings, highestPriorityColor } = warningSelector(exercises);
 
