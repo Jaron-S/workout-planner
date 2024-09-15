@@ -22,6 +22,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Lower_Back", weighting: 0.3 },
           ],
           plane_of_motion: "SagittalPush",
+          compound: true,
         },
         {
           id: "4a72fb63-8361-480f-8a2b-7bdc78e49826",
@@ -34,6 +35,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Traps", weighting: 0.1 },
           ],
           plane_of_motion: "SagittalPull",
+          compound: true,
         },
         {
           id: "eccc056c-d78a-4fce-90f3-b2fa8c0411fc",
@@ -45,6 +47,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Glutes", weighting: 0.4 },
           ],
           plane_of_motion: "SagittalPull",
+          compound: true,
         },
         {
           id: "c6e82aa3-a1e2-407c-b6a0-b682a295859f",
@@ -73,6 +76,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Shoulders", weighting: 0.2 },
           ],
           plane_of_motion: "SagittalPush",
+          compound: true,
         },
         {
           id: "3309e9e4-3741-4d76-922c-2e1d2b3872a3",
@@ -123,6 +127,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Shoulders", weighting: 0.2 },
           ],
           plane_of_motion: "SagittalPush",
+          compound: true,
         },
         {
           id: "bd820ebb-beb0-46bb-985d-639b09d9fbf0",
@@ -135,6 +140,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Traps", weighting: 0.3 },
           ],
           plane_of_motion: "SagittalPull",
+          compound: true,
         },
         {
           id: "12efafea-2d7e-4253-b2ce-a624f9df98b4",
@@ -147,6 +153,7 @@ export const initialRoutine: RoutineProps = {
             { muscle: "Lower_Back", weighting: 0.3 },
           ],
           plane_of_motion: "SagittalPush",
+          compound: true,
         },
         {
           id: "289340ed-6cfe-4aeb-8079-bfef32f3150e",

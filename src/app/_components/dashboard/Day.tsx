@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Exercise from "./Exercise";
 import { ExerciseProps } from "@/app/_types";
-import { WarningAmber as WarningAmberIcon } from "@mui/icons-material";
+import { WarningAmber as WarningIcon, InfoOutlined as InfoIcon } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 
 interface DayProps {
@@ -52,93 +52,89 @@ const Day = ({ day, exercises }: DayProps) => {
 
 
 const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
+
   const warningSelector = (exercises: ExerciseProps[]) => {
     let warnings: string[] = [];
     let highestPriorityColor: string = "success";
-
+  
     // Calculate total sets
     const totalSets = exercises.reduce(
       (acc, exercise) => acc + exercise.sets,
       0
     );
-
-    // Count compound exercises
+  
+    // Count compound and isolation exercises
     const compoundExercises = exercises.filter((exercise) => exercise.compound);
-    const compoundExerciseCount = compoundExercises.length;
-
-    // Count isolation exercises
-    const isolationExercises = exercises.filter(
-      (exercise) => !exercise.compound
-    );
-    const isolationExerciseCount = isolationExercises.length;
-
+    const isolationExercises = exercises.filter((exercise) => !exercise.compound);
+  
     // Check if compound exercises are performed first
     const compoundFirst = exercises.every((exercise, index) => {
       if (exercise.compound) {
-        // Once we find a compound exercise, ensure that no isolation exercises are before it
         return !exercises.slice(0, index).some((e) => !e.compound);
       }
       return true;
     });
-
-    // Calculate the total number of exercises per muscle group
+  
+    // Calculate total number of exercises per muscle group
     const muscleGroups = exercises.reduce((acc, exercise) => {
       exercise.muscle_weightings.forEach(({ muscle }) => {
         acc[muscle] = (acc[muscle] || 0) + 1;
       });
       return acc;
     }, {} as Record<string, number>);
-
+  
+    // Compound exercises should be first
     if (!compoundFirst) {
+      const isolationBeforeCompound = exercises
+        .filter((exercise, index) => !exercise.compound && exercises.slice(index + 1).some((e) => e.compound))
+        .map(e => e.name);
       warnings.push(
-        "Compound exercises should be first. Consider rearranging your workout."
+        `Compound exercises should be performed before isolation exercises. Rearrange the following: ${isolationBeforeCompound.join(", ")}.`
       );
       highestPriorityColor = "danger";
     }
-
+  
+    // Weekly volume check (total sets)
     if (totalSets < 15) {
       warnings.push(
-        "Less than 15 sets. Consider increasing weekly volume or reducing the number of days."
+        `The total number of sets (${totalSets}) is less than 15. Consider increasing weekly volume.`
       );
       highestPriorityColor = "danger";
     } else if (totalSets > 25) {
       warnings.push(
-        "Over 25 sets. Consider reducing weekly volume or increasing the number of days."
+        `The total number of sets (${totalSets}) exceeds 25. Consider reducing weekly volume or splitting sessions.`
       );
       highestPriorityColor = "danger";
     }
-
-    if (compoundExerciseCount > 3) {
+  
+    // Too few compound exercises
+    if (compoundExercises.length < 2) {
       warnings.push(
-        "Too many compound exercises. Consider reducing the number to avoid excessive fatigue."
+        `Too few compound exercises (${compoundExercises.length}). Consider adding more compound movements for greater impact.`
       );
-      highestPriorityColor =
-        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
+      highestPriorityColor = "warning";
     }
-
-    if (isolationExerciseCount > 4) {
+  
+    // Overloaded muscle groups (Primary - Recommendation tier)
+    const overloadedMuscleGroups = Object.entries(muscleGroups)
+      .filter(([_, count]) => count > 3)
+      .map(([muscle]) => muscle);
+    
+    if (overloadedMuscleGroups.length > 0) {
       warnings.push(
-        "Too many isolation exercises. Consider reducing the number to focus on more impactful movements."
+        `Too many exercises for muscle group(s): ${overloadedMuscleGroups.join(", ")}. Reduce exercise count for these muscle groups.`
       );
-      highestPriorityColor =
-        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
+      if (highestPriorityColor === "success") highestPriorityColor = "primary"; // Least critical
     }
-
-    if (Object.values(muscleGroups).some((count) => count > 3)) {
-      warnings.push(
-        "Too many exercises for one muscle group. Consider reducing the number to avoid overtraining."
-      );
-      highestPriorityColor =
-        highestPriorityColor === "success" ? "warning" : highestPriorityColor;
-    }
-
+  
+    // No warnings
     if (warnings.length === 0) {
       warnings.push("All criteria met. Your workout is well-structured.");
     }
-
+  
     return { warnings, highestPriorityColor };
   };
-
+    
   const { warnings, highestPriorityColor } = warningSelector(exercises);
 
   return (
@@ -158,15 +154,18 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
         delay={500}
       >
         {highestPriorityColor !== "success" ? (
-          <WarningAmberIcon
+          <WarningIcon
             className={`text-${highestPriorityColor}`}
             fontSize="small"
           />
-        ) : (
+        ) : (highestPriorityColor == "success" ? (
           <CheckIcon
             className={`text-${highestPriorityColor}`}
             fontSize="small"
           />
+        ) : (
+          <InfoIcon/>
+        )
         )}
       </Tooltip>
       <p className="ml-2">{`Sets: ${exercises.reduce(
