@@ -1064,5 +1064,96 @@
     "name": "Running",
     "muscle_weightings": [{ "muscle": "Hamstrings", "weighting": 0 }],
     "plane_of_motion": "SagittalPush"
-  }
+  },
+  {
+    "id": "ex112",
+    "name": "Dumbbell Pullover",
+    "muscle_weightings": [
+      { "muscle": "Chest", "weighting": 0.6 },
+      { "muscle": "Lats", "weighting": 0.5 },
+      { "muscle": "Triceps", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPull"
+  },
+  {
+    "id": "ex113",
+    "name": "Seated Incline Curl",
+    "muscle_weightings": [
+      { "muscle": "Biceps", "weighting": 1 },
+      { "muscle": "Forearms", "weighting": 0.2 }
+    ],
+    "plane_of_motion": "SagittalPull"
+  },
+  {
+    "id": "ex114",
+    "name": "Seated Lateral Raise",
+    "muscle_weightings": [
+      { "muscle": "Shoulders", "weighting": 1 }
+    ],
+    "plane_of_motion": "FrontalPull"
+  },
+  {
+    "id": "ex115",
+    "name": "Zercher Squat",
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 0.7 },
+      { "muscle": "Glutes", "weighting": 0.6 },
+      { "muscle": "Lower Back", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPush",
+    "compound": true
+  },
+  {
+    "id": "ex116",
+    "name": "Nordic Curl",
+    "muscle_weightings": [
+      { "muscle": "Hamstrings", "weighting": 1 }
+    ],
+    "plane_of_motion": "SagittalPull"
+  },
+  {
+    "id": "ex117",
+    "name": "Reverse Nordic Curl",
+    "muscle_weightings": [
+      { "muscle": "Quads", "weighting": 1 }
+    ],
+    "plane_of_motion": "SagittalPush"
+  },
+  {
+    "id": "ex118",
+    "name": "Farmer's Carry (Unilateral)",
+    "muscle_weightings": [
+      { "muscle": "Core", "weighting": 0.5 },
+      { "muscle": "Forearms", "weighting": 0.4 },
+      { "muscle": "Shoulders", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalCarry"
+  },
+  {
+    "id": "ex119",
+    "name": "Candlestick",
+    "muscle_weightings": [
+      { "muscle": "Abs", "weighting": 1 },
+      { "muscle": "Lower Back", "weighting": 0.4 }
+    ],
+    "plane_of_motion": "SagittalPull"
+  },
+  {
+    "id": "ex120",
+    "name": "Single Leg Calf Raise",
+    "muscle_weightings": [
+      { "muscle": "Calves", "weighting": 1 }
+    ],
+    "plane_of_motion": "SagittalPush"
+  },
+  {
+    "id": "ex121",
+    "name": "Jefferson Curl",
+    "muscle_weightings": [
+      { "muscle": "Lower Back", "weighting": 0.8 },
+      { "muscle": "Hamstrings", "weighting": 0.5 },
+      { "muscle": "Core", "weighting": 0.3 }
+    ],
+    "plane_of_motion": "SagittalPull"
+  }  
 ]
