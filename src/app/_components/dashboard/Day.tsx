@@ -20,7 +20,7 @@ interface DayProps {
 
 const Day = ({ day, exercises }: DayProps) => {
   return (
-    <Card className="w-full min-h-full md:max-w-[225px]">
+    <Card className="w-full min-h-full md:max-w-[225px] flex flex-col">
       <CardHeader className="flex justify-between gap-3">
         {day}
         <Warning exercises={exercises} />
@@ -31,11 +31,15 @@ const Day = ({ day, exercises }: DayProps) => {
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="h-full w-full"
+            className="flex-grow h-full w-full flex flex-col"
           >
-            <CardBody className="h-full w-full items-center overflow-visible">
+            <CardBody className="flex-grow h-full w-full items-center overflow-visible">
               {exercises.map((exercise, index) => (
-                <Exercise key={exercise.id} exercise={exercise} index={index} />
+                <Exercise
+                  key={exercise.id}
+                  exercise={exercise}
+                  index={index}
+                />
               ))}
             </CardBody>
             {provided.placeholder}
@@ -45,6 +49,7 @@ const Day = ({ day, exercises }: DayProps) => {
     </Card>
   );
 };
+
 
 const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
   const warningSelector = (exercises: ExerciseProps[]) => {
