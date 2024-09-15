@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
-import { Tooltip, Button, Input, Select, SelectItem, Card, CardHeader, CardFooter, CardBody } from "@nextui-org/react";
+import { Tooltip, Button, Input, Select, SelectItem, Card, CardHeader, CardFooter, CardBody, Divider } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
 
 const BodyFatCalculator: React.FC = () => {
@@ -22,6 +22,8 @@ const BodyFatCalculator: React.FC = () => {
   const [bfMethod2, setBfMethod2] = useState<string | null>(null);
   const [bfCovertBailey, setBfCovertBailey] = useState<string | null>(null);
   const [bfAverage, setBfAverage] = useState<string | null>(null);
+  const [ffmi, setFfmi] = useState<string | null>(null);
+  const [ffmiAdjusted, setFfmiAdjusted] = useState<string | null>(null);
 
   const calculateBodyFat = () => {
     if (!gender || !units) {
@@ -112,6 +114,31 @@ const BodyFatCalculator: React.FC = () => {
     setBfMethod2(bf2 !== null ? bf2.toFixed(2) : null);
     setBfCovertBailey(bfCovert.toFixed(2));
     setBfAverage(averageBf.toFixed(2));
+
+    // Compute Lean Body Mass
+    const leanMass = weight_kg * (1 - averageBf / 100);
+
+    // Compute height in meters
+    const height_meters = height_cm / 100;
+
+    if (height_meters <= 0) {
+      alert('Invalid height.');
+      return;
+    }
+
+    if (weight_kg <= 0) {
+      alert('Invalid weight.');
+      return;
+    }
+
+    // Compute FFMI
+    const ffmiValue = leanMass / (height_meters * height_meters);
+
+    // Adjust FFMI to 1.8 m standard height
+    const ffmiAdjustedValue = ffmiValue + 6.1 * (1.8 - height_meters);
+
+    setFfmi(ffmiValue.toFixed(2));
+    setFfmiAdjusted(ffmiAdjustedValue.toFixed(2));
   };
 
   return (
@@ -149,6 +176,32 @@ const BodyFatCalculator: React.FC = () => {
             <SelectItem key="Metric">Metric</SelectItem>
             <SelectItem key="Imperial">Imperial</SelectItem>
           </Select>
+
+          <Input
+            label={`Weight (${units === 'Metric' ? 'kg' : 'lbs'})`}
+            type="number"
+            placeholder="Enter your weight"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            startContent={
+              <Tooltip content="Enter your weight.">
+                <Icon icon={"material-symbols:info"} />
+              </Tooltip>
+            }
+          />
+
+          <Input
+            label={`Height (${units === 'Metric' ? 'cm' : 'inches'})`}
+            type="number"
+            placeholder="Enter your height"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+            startContent={
+              <Tooltip content="Enter your height.">
+                <Icon icon={"material-symbols:info"} />
+              </Tooltip>
+            }
+          />
 
           <Input
             label={`Neck (${units === 'Metric' ? 'cm' : 'inches'})`}
@@ -268,11 +321,14 @@ const BodyFatCalculator: React.FC = () => {
         <CardFooter>
           {(bfMethod1 || bfMethod2 || bfCovertBailey) && (
             <div className='flex flex-col'>
-              <h3 className='text-lg font-boldworko'>Results:</h3>
+              <h3 className='text-xl font-bold mb-2'>Results:</h3>
               {bfMethod1 && <p>U.S. Navy Circumference Method: {bfMethod1}%</p>}
               {bfMethod2 && <p>U.S. Navy Circumference Method #2: {bfMethod2}%</p>}
               {bfCovertBailey && <p>Covert Bailey: {bfCovertBailey}%</p>}
               {bfAverage && <p>Average: {bfAverage}%</p>}
+              <Divider className="my-2"/>
+              {ffmi && <p>FFMI: {ffmi}</p>}
+              {ffmiAdjusted && <p>Normalized FFMI: {ffmiAdjusted}</p>}
             </div>
           )}
         </CardFooter>
