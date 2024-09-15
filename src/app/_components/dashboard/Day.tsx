@@ -55,7 +55,7 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
 
   const warningSelector = (exercises: ExerciseProps[]) => {
     let warnings: string[] = [];
-    let highestPriorityColor: string = "success";
+    let highestPriorityColor: "success" | "warning" | "danger" | "primary" = "success";
   
     // Calculate total sets
     const totalSets = exercises.reduce(
@@ -153,20 +153,21 @@ const Warning = ({ exercises }: { exercises: ExerciseProps[] }) => {
         }
         delay={500}
       >
-        {highestPriorityColor !== "success" ? (
-          <WarningIcon
-            className={`text-${highestPriorityColor}`}
-            fontSize="small"
-          />
-        ) : (highestPriorityColor == "success" ? (
-          <CheckIcon
-            className={`text-${highestPriorityColor}`}
-            fontSize="small"
-          />
-        ) : (
-          <InfoIcon/>
-        )
-        )}
+        {
+          highestPriorityColor === "success" ? (
+            <CheckIcon
+              className={`text-${highestPriorityColor}`}
+              fontSize="small"
+            />
+          ) : highestPriorityColor === "primary" ? (
+            <InfoIcon fontSize="small" />
+          ) : (
+            <WarningIcon
+              className={`text-${highestPriorityColor}`}
+              fontSize="small"
+            />
+          )
+        }
       </Tooltip>
       <p className="ml-2">{`Sets: ${exercises.reduce(
         (acc, exercise) => acc + exercise.sets,
